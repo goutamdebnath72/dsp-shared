@@ -1,0 +1,20 @@
+{
+  "name": "dsp-shared",
+  "version": "1.0.0",
+  "description": "Code that the DSP Intranet and ESS share, kept in ONE place so a change reaches both apps.",
+  "type": "module",
+  "exports": {
+    "./nameHelper": {
+      "types": "./src/nameHelper.ts",
+      "default": "./src/nameHelper.ts"
+    }
+  },
+  "files": ["src"],
+  "scripts": {
+    "test": "tsx src/nameHelper.selftest.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  }
+}
