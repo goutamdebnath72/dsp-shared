@@ -1,20 +1,45 @@
 {
   "name": "dsp-shared",
   "version": "1.0.0",
-  "description": "Code that the DSP Intranet and ESS share, kept in ONE place so a change reaches both apps.",
+  "description": "Code that the DSP Intranet, ESS and IMS share, kept in ONE place so a change reaches every app.",
   "type": "module",
   "exports": {
     "./nameHelper": {
       "types": "./src/nameHelper.ts",
       "default": "./src/nameHelper.ts"
+    },
+    "./gateCodes": {
+      "types": "./src/gateCodes.ts",
+      "default": "./src/gateCodes.ts"
+    },
+    "./gateConfig": {
+      "types": "./src/gateConfig.ts",
+      "default": "./src/gateConfig.ts"
+    },
+    "./outsideAccounts": {
+      "types": "./src/outsideAccounts.ts",
+      "default": "./src/outsideAccounts.ts"
     }
   },
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "scripts": {
-    "test": "tsx src/nameHelper.selftest.ts"
+    "test": "tsx src/nameHelper.selftest.ts && tsx src/gateCodes.selftest.ts && tsx src/outsideAccounts.selftest.ts"
   },
   "devDependencies": {
     "tsx": "^4.23.15",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "luxon": "^3.7.2",
+    "@types/luxon": "^3.7.1",
+    "@types/node": "^22.0.0"
+  },
+  "peerDependencies": {
+    "luxon": "^3.4.4"
+  },
+  "peerDependenciesMeta": {
+    "luxon": {
+      "optional": true
+    }
   }
 }
